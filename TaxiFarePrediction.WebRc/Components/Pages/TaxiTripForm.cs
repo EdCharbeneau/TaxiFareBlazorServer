@@ -36,16 +36,6 @@ namespace TaxiFarePrediction.WebRc
                 { "Mello Cab", "CMT" },
                 { "Uptown Limo", "VTS" }
             };
-        
-        //public TaxiTrip ToTaxiTrip() =>
-        //    new TaxiTrip
-        //    {
-        //        TripDistance = TripDistance,
-        //        PassengerCount = PassengerCount,
-        //        PaymentType = SelectedPaymentMethod,
-        //        RateCode = SelectedRateCode.ToString(),
-        //        VendorId = SelectedVendor
-        //    };
 
     }
 
