@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="0.11.0" />
+    <PackageReference Include="PLplot" Version="5.13.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Data\taxi-fare-test.csv" Link="Data\taxi-fare-test.csv" />
+    <None Include="..\Data\taxi-fare-train.csv" Link="Data\taxi-fare-train.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\TaxiFarePrediction.Service\TaxiFarePrediction.Service.csproj" />
+  </ItemGroup>
+
+</Project>

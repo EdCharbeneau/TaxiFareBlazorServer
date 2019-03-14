@@ -1,0 +1,79 @@
+﻿@page "/"
+@using Extensions
+@using DataStructures
+@using System.Globalization
+@using TaxiFarePrediction.Service
+@inject ITaxiFarePredictionService taxiService
+
+<section class="row">
+    <div class="col-6">
+        <EditForm Model="@Trip" OnValidSubmit="@HandleValidSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label for=@nameof(Trip.PassengerCount)>Passengers</label>
+                <InputNumber bind-Value=@Trip.PassengerCount Class="form-control" Id=@nameof(Trip.PassengerCount) />
+            </div>
+            <div class="form-group">
+                <label for=@nameof(Trip.TripDistance)>Trip Distance</label>
+                <InputNumber bind-Value=@Trip.TripDistance Class="form-control" Id=@nameof(Trip.TripDistance) />
+            </div>
+            <div class="form-group">
+                <label for=@nameof(Trip.RateCodes)>Rate Code</label>
+                <InputSelect bind-Value=@Trip.SelectedRateCode Class="form-control" Id=@nameof(Trip.RateCodes)>
+                    <option>Select</option>
+                    @foreach (var p in Trip.RateCodes)
+                    {
+                        <option value="@p">@p</option>
+                    }
+                </InputSelect>
+            </div>
+            <div class="form-group">
+                <label for=@nameof(Trip.PaymentMethods)>Payment Type</label>
+                <InputSelect bind-Value=@Trip.SelectedPaymentMethod Class="form-control" Id=@nameof(Trip.PaymentMethods)>
+                    <option>Select</option>
+                    @foreach (var p in Trip.PaymentMethods)
+                    {
+                        <option value="@p.Value">@p.Key</option>
+                    }
+                </InputSelect>
+            </div>
+            <div class="form-group">
+                <label for=@nameof(Trip.Vendors)>Vendors</label>
+                <InputSelect bind-Value=@Trip.SelectedVendor Class="form-control" Id=@nameof(Trip.Vendors)>
+                    <option>Select</option>
+                    @foreach (var p in Trip.Vendors)
+                    {
+                        <option value="@p.Value">@p.Key</option>
+                    }
+                </InputSelect>
+            </div>
+
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+        </EditForm>
+    </div>
+</section>
+@functions {
+
+    public TaxiTripForm Trip { get; set; } = new TaxiTripForm();
+
+    string estimatedFare;
+
+    void HandleValidSubmit()
+    {
+        estimatedFare = Trip.Map(t => new TaxiTrip()
+        {
+            TripDistance = (float)t.TripDistance,
+            PassengerCount = t.PassengerCount,
+            PaymentType = t.SelectedPaymentMethod,
+            VendorId = t.SelectedVendor,
+            RateCode = t.SelectedRateCode,
+            FareAmount = 0
+        })
+        .Map(taxiService.PredictFare)
+        .FareAmount
+        .ToString("C", CultureInfo.CurrentCulture);
+    }
+
+}
