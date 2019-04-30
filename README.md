@@ -1,4 +1,4 @@
-# Razor Components ML Mashup
+# Blazor ML Mashup
 
 This project uses Razor Components with ML.NET to show how to implement ML.NET as a service.
 
