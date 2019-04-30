@@ -9,9 +9,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TaxiFarePrediction.WebRc.Components;
 
-namespace TaxiFarePrediction.WebRc
+namespace TaxiFarePrediction.BlazorServer
 {
     public class Startup
     {
@@ -19,10 +18,8 @@ namespace TaxiFarePrediction.WebRc
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc()
-                .AddNewtonsoftJson();
-
-            services.AddRazorComponents();
+            services.AddRazorPages();
+            services.AddServerSideBlazor();
             string modelPath = Path.Combine(Environment.CurrentDirectory, "MLModels", "TaxiFareModel.zip");
             services.AddSingleton<Service.ITaxiFarePredictionService>(new Service.TaxiFarePredictionService(modelPath));
         }
@@ -41,12 +38,15 @@ namespace TaxiFarePrediction.WebRc
             }
 
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
-            app.UseRouting(routes =>
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRazorPages();
-                routes.MapComponentHub<App>("app");
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToPage("/_Host");
             });
         }
     }

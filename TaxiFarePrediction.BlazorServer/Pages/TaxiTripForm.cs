@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace TaxiFarePrediction.WebRc
+namespace TaxiFarePrediction.BlazorServer
 {
     public class TaxiTripForm
     {

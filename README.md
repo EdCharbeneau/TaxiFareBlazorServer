@@ -15,9 +15,9 @@ To build the model select and run the TaxiFarePrediction console application. Yo
 
 Once the model is built the web application `TaxiFarePrediction.WebRc` can be set as the startup app and ran.
 
-# TaxiFarePrediction.WebRc
+# TaxiFarePrediction.BlazorServer
 
-This is a full stack C# web application using Razor Components. Currently, ML.NET is incompatible with WASM, so Blazor is not an option.
+This is a full stack C# web application using Blazor Server-Side. Currently, ML.NET is incompatible with WASM, so Blazor Client-Side is not an option.
 
 When training a new Taxi Model, LibMan may be used to import the new trained model. This model is in the form of a ZIP file in the console application's `MLModels` folder. LibMan has a relative path reference to the file and will import it into the web application.
 

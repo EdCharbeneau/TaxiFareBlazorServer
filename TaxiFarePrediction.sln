@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiFarePrediction", "TaxiF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiFarePrediction.Service", "TaxiFarePrediction.Service\TaxiFarePrediction.Service.csproj", "{FAC10873-443C-4E4A-9A9C-EB646131C268}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxiFarePrediction.WebRc", "TaxiFarePrediction.WebRc\TaxiFarePrediction.WebRc.csproj", "{07D6C749-2430-4580-9A67-7F3E1E9D1127}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxiFarePrediction.BlazorServer", "TaxiFarePrediction.BlazorServer\TaxiFarePrediction.BlazorServer.csproj", "{15F1E566-5FF0-458D-AEB3-F8DEE57A50BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,14 +33,14 @@ Global
 		{FAC10873-443C-4E4A-9A9C-EB646131C268}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FAC10873-443C-4E4A-9A9C-EB646131C268}.Release|x86.ActiveCfg = Release|Any CPU
 		{FAC10873-443C-4E4A-9A9C-EB646131C268}.Release|x86.Build.0 = Release|Any CPU
-		{07D6C749-2430-4580-9A67-7F3E1E9D1127}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{07D6C749-2430-4580-9A67-7F3E1E9D1127}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{07D6C749-2430-4580-9A67-7F3E1E9D1127}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{07D6C749-2430-4580-9A67-7F3E1E9D1127}.Debug|x86.Build.0 = Debug|Any CPU
-		{07D6C749-2430-4580-9A67-7F3E1E9D1127}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{07D6C749-2430-4580-9A67-7F3E1E9D1127}.Release|Any CPU.Build.0 = Release|Any CPU
-		{07D6C749-2430-4580-9A67-7F3E1E9D1127}.Release|x86.ActiveCfg = Release|Any CPU
-		{07D6C749-2430-4580-9A67-7F3E1E9D1127}.Release|x86.Build.0 = Release|Any CPU
+		{15F1E566-5FF0-458D-AEB3-F8DEE57A50BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F1E566-5FF0-458D-AEB3-F8DEE57A50BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F1E566-5FF0-458D-AEB3-F8DEE57A50BA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{15F1E566-5FF0-458D-AEB3-F8DEE57A50BA}.Debug|x86.Build.0 = Debug|Any CPU
+		{15F1E566-5FF0-458D-AEB3-F8DEE57A50BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F1E566-5FF0-458D-AEB3-F8DEE57A50BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15F1E566-5FF0-458D-AEB3-F8DEE57A50BA}.Release|x86.ActiveCfg = Release|Any CPU
+		{15F1E566-5FF0-458D-AEB3-F8DEE57A50BA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
