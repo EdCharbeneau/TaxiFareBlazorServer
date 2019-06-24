@@ -14,15 +14,15 @@
 
             <div class="form-group">
                 <label for=@nameof(Trip.PassengerCount)>Passengers</label>
-                <InputNumber bind-Value=@Trip.PassengerCount Class="form-control" Id=@nameof(Trip.PassengerCount) />
+                <InputNumber @bind-Value=@Trip.PassengerCount Class="form-control" Id=@nameof(Trip.PassengerCount) />
             </div>
             <div class="form-group">
                 <label for=@nameof(Trip.TripDistance)>Trip Distance</label>
-                <InputNumber bind-Value=@Trip.TripDistance Class="form-control" Id=@nameof(Trip.TripDistance) />
+                <InputNumber @bind-Value=@Trip.TripDistance Class="form-control" Id=@nameof(Trip.TripDistance) />
             </div>
             <div class="form-group">
                 <label for=@nameof(Trip.RateCodes)>Rate Code</label>
-                <InputSelect bind-Value=@Trip.SelectedRateCode Class="form-control" Id=@nameof(Trip.RateCodes)>
+                <InputSelect @bind-Value=@Trip.SelectedRateCode Class="form-control" Id=@nameof(Trip.RateCodes)>
                     <option>Select</option>
                     @foreach (var p in Trip.RateCodes)
                     {
@@ -32,7 +32,7 @@
             </div>
             <div class="form-group">
                 <label for=@nameof(Trip.PaymentMethods)>Payment Type</label>
-                <InputSelect bind-Value=@Trip.SelectedPaymentMethod Class="form-control" Id=@nameof(Trip.PaymentMethods)>
+                <InputSelect @bind-Value=@Trip.SelectedPaymentMethod Class="form-control" Id=@nameof(Trip.PaymentMethods)>
                     <option>Select</option>
                     @foreach (var p in Trip.PaymentMethods)
                     {
@@ -42,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label for=@nameof(Trip.Vendors)>Vendors</label>
-                <InputSelect bind-Value=@Trip.SelectedVendor Class="form-control" Id=@nameof(Trip.Vendors)>
+                <InputSelect @bind-Value=@Trip.SelectedVendor Class="form-control" Id=@nameof(Trip.Vendors)>
                     <option>Select</option>
                     @foreach (var p in Trip.Vendors)
                     {
